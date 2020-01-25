@@ -1,0 +1,31 @@
+{
+    "name": "RoomType",
+    "fields": [
+        {
+            "fieldName": "typeBed",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bathroom",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "roomType",
+            "relationshipName": "resource"
+        }
+    ],
+    "changelogDate": "20200123163633",
+    "entityTableName": "room_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

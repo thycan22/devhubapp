@@ -1,0 +1,52 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.devarchi.bookapp",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "monolith",
+    "baseName": "DevApp",
+    "packageName": "com.devarchi.bookapp",
+    "packageFolder": "com/devarchi/bookapp",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "MWJiODBlZjVjMGRlYWM5NWE4OTcwYjIwMzI3NzdmZWE1OWZmYjljYmRlYjdiZDhkOWQzYmNiN2IzZDI0YzE3NzRlNDQ0Y2VlNzc4OTA3NzZkMWVhNmQ0NzA1ZTczNWViZjVlMjA5NGY3MmJiN2JhZDJkYzU5M2Y1NTZiOTZmYTA=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1579797160177,
+    "testFrameworks": ["cucumber"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-swagger-cli",
+        "version": "3.0.1"
+      },
+      {
+        "name": "generator-jhipster-kutilang",
+        "version": "0.0.9"
+      }
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": ["fr", "ar-ly", "zh-cn", "nl", "en", "de"],
+    "blueprints": []
+  }
+}

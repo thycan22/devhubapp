@@ -1,0 +1,45 @@
+// les chambres
+entity Resource {
+	id UUID,
+	name String required,
+}
+// les types de chambres Double, Simple, Triple
+// salle de bain ou par défaut douche
+entity RoomType {
+	typeBed String,
+    bathroom Boolean
+}
+entity ReservationEvent {
+	start LocalDate required,
+	end LocalDate required,
+    text String,
+    nbDay Integer,
+	nbAdult Integer required,
+    nbChild Integer
+}
+entity Country {
+	country String
+}
+// Prix varie selon la saison avec quatre niveau
+// Haute, standard, basse, à définir
+enum Season {
+	HIGH, MEDIUM, LOW, SPECIAL
+}
+entity Price {
+	price Double,
+	statusPeriod Season
+}
+entity Customer {
+	firstName String required,
+	lastName String,
+	email String,
+	phoneNumber String required,
+}
+relationship ManyToOne{
+	ReservationEvent{resource} to Resource
+}
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Country{customer} to Customer{country(country)}
+ 	Price{reservationEvent} to ReservationEvent{price} , Customer{reservationCommand} to ReservationEvent{customer} , RoomType{resource} to Resource{roomType(typeBed)}
+}

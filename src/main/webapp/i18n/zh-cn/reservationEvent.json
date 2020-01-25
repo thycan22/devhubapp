@@ -1,0 +1,30 @@
+{
+  "devApp": {
+    "reservationEvent": {
+      "home": {
+        "title": "Reservation Events",
+        "createLabel": "创建新 Reservation Event",
+        "createOrEditLabel": "创建或编辑 Reservation Event",
+        "notFound": "No Reservation Events found"
+      },
+      "created": "Reservation Event {{ param }} 创建成功",
+      "updated": "Reservation Event {{ param }} 更新成功",
+      "deleted": "Reservation Event {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Reservation Event {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Reservation Event"
+      },
+      "start": "Start",
+      "end": "End",
+      "text": "Text",
+      "nbDay": "Nb Day",
+      "nbAdult": "Nb Adult",
+      "nbChild": "Nb Child",
+      "resource": "Resource",
+      "price": "Price",
+      "customer": "Customer"
+    }
+  }
+}

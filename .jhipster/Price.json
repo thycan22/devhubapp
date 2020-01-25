@@ -1,0 +1,32 @@
+{
+    "name": "Price",
+    "fields": [
+        {
+            "fieldName": "price",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "statusPeriod",
+            "fieldType": "Season",
+            "fieldValues": "HIGH,MEDIUM,LOW,SPECIAL"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reservationEvent",
+            "otherEntityRelationshipName": "price",
+            "relationshipName": "reservationEvent"
+        }
+    ],
+    "changelogDate": "20200123163636",
+    "entityTableName": "price",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,30 @@
+{
+  "devApp": {
+    "reservationEvent": {
+      "home": {
+        "title": "ReservationEvents",
+        "createLabel": "Créer un nouveau Reservation Event",
+        "createOrEditLabel": "Créer ou éditer un Reservation Event",
+        "notFound": "Aucun Reservation Event trouvé"
+      },
+      "created": "Un nouveau Reservation Event a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Reservation Event avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Reservation Event avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Reservation Event {{ id }} ?"
+      },
+      "detail": {
+        "title": "Reservation Event"
+      },
+      "start": "Start",
+      "end": "End",
+      "text": "Text",
+      "nbDay": "Nb Day",
+      "nbAdult": "Nb Adult",
+      "nbChild": "Nb Child",
+      "resource": "Resource",
+      "price": "Price",
+      "customer": "Customer"
+    }
+  }
+}

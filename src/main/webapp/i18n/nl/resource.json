@@ -1,0 +1,23 @@
+{
+  "devApp": {
+    "resource": {
+      "home": {
+        "title": "Resources",
+        "createLabel": "Maak een nieuwe Resource",
+        "createOrEditLabel": "Maak of wijzig een Resource",
+        "notFound": "No Resources found"
+      },
+      "created": "A new Resource is created with identifier {{ param }}",
+      "updated": "A Resource is updated with identifier {{ param }}",
+      "deleted": "A Resource is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Resource {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Resource"
+      },
+      "name": "Name",
+      "roomType": "Room Type"
+    }
+  }
+}

@@ -1,0 +1,130 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-reservation-event-heading" jhiTranslate="devApp.reservationEvent.home.createOrEditLabel">Create
+                or edit a Reservation Event</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="devApp.reservationEvent.start"
+                        for="field_start">Start</label>
+                    <div class="input-group">
+                        <input id="field_start" type="text" class="form-control" name="start" ngbDatepicker
+                            #startDp="ngbDatepicker" formControlName="start" />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="startDp.toggle()">
+                                <fa-icon [icon]="'calendar-alt'"></fa-icon>
+                            </button>
+                        </span>
+                    </div>
+                    <div
+                        *ngIf="editForm.get('start')!.invalid && (editForm.get('start')!.dirty || editForm.get('start')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('start')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="devApp.reservationEvent.end"
+                        for="field_end">End</label>
+                    <div class="input-group">
+                        <input id="field_end" type="text" class="form-control" name="end" ngbDatepicker
+                            #endDp="ngbDatepicker" formControlName="end" />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="endDp.toggle()">
+                                <fa-icon [icon]="'calendar-alt'"></fa-icon>
+                            </button>
+                        </span>
+                    </div>
+                    <div
+                        *ngIf="editForm.get('end')!.invalid && (editForm.get('end')!.dirty || editForm.get('end')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('end')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="devApp.reservationEvent.text"
+                        for="field_text">Text</label>
+                    <input type="text" class="form-control" name="text" id="field_text" formControlName="text" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="devApp.reservationEvent.nbDay" for="field_nbDay">Nb
+                        Day</label>
+                    <input type="number" class="form-control" name="nbDay" id="field_nbDay" formControlName="nbDay" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="devApp.reservationEvent.nbAdult"
+                        for="field_nbAdult">Nb Adult</label>
+                    <input type="number" class="form-control" name="nbAdult" id="field_nbAdult"
+                        formControlName="nbAdult" />
+                    <div
+                        *ngIf="editForm.get('nbAdult')!.invalid && (editForm.get('nbAdult')!.dirty || editForm.get('nbAdult')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('nbAdult')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                        <small class="form-text text-danger" [hidden]="!editForm.get('nbAdult')?.errors?.number"
+                            jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="devApp.reservationEvent.nbChild"
+                        for="field_nbChild">Nb Child</label>
+                    <input type="number" class="form-control" name="nbChild" id="field_nbChild"
+                        formControlName="nbChild" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="devApp.reservationEvent.resource"
+                        for="field_resource">Resource</label>
+                    <select class="form-control" id="field_resource" name="resource" formControlName="resource">
+                        <option [ngValue]="null"></option>
+                        <option
+                            [ngValue]="resourceOption.id === editForm.get('resource')!.value?.id ? editForm.get('resource')!.value : resourceOption"
+                            *ngFor="let resourceOption of resources; trackBy: trackById">{{resourceOption.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="devApp.reservationEvent.price"
+                        for="field_price">Price</label>
+                    <select class="form-control" id="field_price" name="price" formControlName="price">
+                        <option [ngValue]="null"></option>
+                        <option
+                            [ngValue]="priceOption.id === editForm.get('price')!.value?.id ? editForm.get('price')!.value : priceOption"
+                            *ngFor="let priceOption of prices; trackBy: trackById">{{priceOption.price}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="devApp.reservationEvent.customer"
+                        for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" formControlName="customer">
+                        <option [ngValue]="null"></option>
+                        <option
+                            [ngValue]="customerOption.id === editForm.get('customer')!.value?.id ? editForm.get('customer')!.value : customerOption"
+                            *ngFor="let customerOption of customers; trackBy: trackById">{{customerOption.lastName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving"
+                    class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="devApp.scheduler.home.title">Schedulers</span>
+
+
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br />
+    <div class="alert alert-warning" *ngIf="scheduler?.length === 0">
+        <span jhiTranslate="devApp.scheduler.home.notFound">No schedulers found</span>
+    </div>
+    <h1>Scheduler</h1>
+    <daypilot-scheduler #scheduler [config]="config" [events]="events"></daypilot-scheduler>
+</div>

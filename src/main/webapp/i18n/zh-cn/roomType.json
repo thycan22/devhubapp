@@ -1,0 +1,24 @@
+{
+  "devApp": {
+    "roomType": {
+      "home": {
+        "title": "Room Types",
+        "createLabel": "创建新 Room Type",
+        "createOrEditLabel": "创建或编辑 Room Type",
+        "notFound": "No Room Types found"
+      },
+      "created": "Room Type {{ param }} 创建成功",
+      "updated": "Room Type {{ param }} 更新成功",
+      "deleted": "Room Type {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Room Type {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Room Type"
+      },
+      "typeBed": "Type Bed",
+      "bathroom": "Bathroom",
+      "resource": "Resource"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="reservationEvent">
+            <h2><span jhiTranslate="devApp.reservationEvent.detail.title">Reservation Event</span> {{reservationEvent.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="devApp.reservationEvent.start">Start</span></dt>
+                <dd>
+                    <span>{{reservationEvent.start}}</span>
+                </dd>
+                <dt><span jhiTranslate="devApp.reservationEvent.end">End</span></dt>
+                <dd>
+                    <span>{{reservationEvent.end}}</span>
+                </dd>
+                <dt><span jhiTranslate="devApp.reservationEvent.text">Text</span></dt>
+                <dd>
+                    <span>{{reservationEvent.text}}</span>
+                </dd>
+                <dt><span jhiTranslate="devApp.reservationEvent.nbDay">Nb Day</span></dt>
+                <dd>
+                    <span>{{reservationEvent.nbDay}}</span>
+                </dd>
+                <dt><span jhiTranslate="devApp.reservationEvent.nbAdult">Nb Adult</span></dt>
+                <dd>
+                    <span>{{reservationEvent.nbAdult}}</span>
+                </dd>
+                <dt><span jhiTranslate="devApp.reservationEvent.nbChild">Nb Child</span></dt>
+                <dd>
+                    <span>{{reservationEvent.nbChild}}</span>
+                </dd>
+                <dt><span jhiTranslate="devApp.reservationEvent.resource">Resource</span></dt>
+                <dd>
+                    <div *ngIf="reservationEvent.resource">
+                        <a [routerLink]="['/resource', reservationEvent.resource?.id, 'view']">{{reservationEvent.resource?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="devApp.reservationEvent.price">Price</span></dt>
+                <dd>
+                    <div *ngIf="reservationEvent.price">
+                        <a [routerLink]="['/price', reservationEvent.price?.id, 'view']">{{reservationEvent.price?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="devApp.reservationEvent.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="reservationEvent.customer">
+                        <a [routerLink]="['/customer', reservationEvent.customer?.id, 'view']">{{reservationEvent.customer?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/reservation-event', reservationEvent.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

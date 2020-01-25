@@ -1,0 +1,24 @@
+{
+  "devApp": {
+    "price": {
+      "home": {
+        "title": "Prices",
+        "createLabel": "Maak een nieuwe Price",
+        "createOrEditLabel": "Maak of wijzig een Price",
+        "notFound": "No Prices found"
+      },
+      "created": "A new Price is created with identifier {{ param }}",
+      "updated": "A Price is updated with identifier {{ param }}",
+      "deleted": "A Price is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Price {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Price"
+      },
+      "price": "Price",
+      "statusPeriod": "Status Period",
+      "reservationEvent": "Reservation Event"
+    }
+  }
+}

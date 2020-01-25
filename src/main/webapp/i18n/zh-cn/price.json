@@ -1,0 +1,24 @@
+{
+  "devApp": {
+    "price": {
+      "home": {
+        "title": "Prices",
+        "createLabel": "创建新 Price",
+        "createOrEditLabel": "创建或编辑 Price",
+        "notFound": "No Prices found"
+      },
+      "created": "Price {{ param }} 创建成功",
+      "updated": "Price {{ param }} 更新成功",
+      "deleted": "Price {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Price {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Price"
+      },
+      "price": "Price",
+      "statusPeriod": "Status Period",
+      "reservationEvent": "Reservation Event"
+    }
+  }
+}

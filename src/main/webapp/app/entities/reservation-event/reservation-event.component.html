@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="devApp.reservationEvent.home.title">Reservation Events</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-reservation-event"
+            [routerLink]="['/reservation-event/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span jhiTranslate="devApp.reservationEvent.home.createLabel">
+                Create a new Reservation Event
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br />
+    <div class="alert alert-warning" *ngIf="reservationEvents?.length === 0">
+        <span jhiTranslate="devApp.reservationEvent.home.notFound">No reservationEvents found</span>
+    </div>
+    <div class="table-responsive" *ngIf="reservationEvents?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col"><span jhiTranslate="devApp.reservationEvent.start">Start</span></th>
+                    <th scope="col"><span jhiTranslate="devApp.reservationEvent.end">End</span></th>
+                    <th scope="col"><span jhiTranslate="devApp.reservationEvent.text">Text</span></th>
+                    <th scope="col"><span jhiTranslate="devApp.reservationEvent.nbDay">Nb Day</span></th>
+                    <th scope="col"><span jhiTranslate="devApp.reservationEvent.nbAdult">Nb Adult</span></th>
+                    <th scope="col"><span jhiTranslate="devApp.reservationEvent.nbChild">Nb Child</span></th>
+                    <th scope="col"><span jhiTranslate="devApp.reservationEvent.resource">Resource</span></th>
+                    <th scope="col"><span jhiTranslate="devApp.reservationEvent.price">Price</span></th>
+                    <th scope="col"><span jhiTranslate="devApp.reservationEvent.customer">Customer</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reservationEvent of reservationEvents ;trackBy: trackId">
+                    <td><a
+                            [routerLink]="['/reservation-event', reservationEvent.id, 'view' ]">{{reservationEvent.id}}</a>
+                    </td>
+                    <td>{{reservationEvent.start | date:'mediumDate'}}</td>
+                    <td>{{reservationEvent.end | date:'mediumDate'}}</td>
+                    <td>{{reservationEvent.text}}</td>
+                    <td>{{reservationEvent.nbDay}}</td>
+                    <td>{{reservationEvent.nbAdult}}</td>
+                    <td>{{reservationEvent.nbChild}}</td>
+                    <td>
+                        <div *ngIf="reservationEvent.resource">
+                            <a
+                                [routerLink]="['/resource', reservationEvent.resource?.id, 'view' ]">{{reservationEvent.resource?.name}}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="reservationEvent.price">
+                            <a
+                                [routerLink]="['/price', reservationEvent.price?.id, 'view' ]">{{reservationEvent.price?.price}}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="reservationEvent.customer">
+                            <a
+                                [routerLink]="['/customer', reservationEvent.customer?.id, 'view' ]">{{reservationEvent.customer?.lastName}}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit" [routerLink]="['/reservation-event', reservationEvent.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                                <fa-icon [icon]="'eye'"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+                            <button type="submit" [routerLink]="['/reservation-event', reservationEvent.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                                <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+                            <button type="submit" (click)="delete(reservationEvent)" class="btn btn-danger btn-sm">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

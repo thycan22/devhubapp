@@ -1,0 +1,24 @@
+{
+  "devApp": {
+    "roomType": {
+      "home": {
+        "title": "RoomTypes",
+        "createLabel": "Créer un nouveau Room Type",
+        "createOrEditLabel": "Créer ou éditer un Room Type",
+        "notFound": "Aucun Room Type trouvé"
+      },
+      "created": "Un nouveau Room Type a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Room Type avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Room Type avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Room Type {{ id }} ?"
+      },
+      "detail": {
+        "title": "Room Type"
+      },
+      "typeBed": "Type Bed",
+      "bathroom": "Bathroom",
+      "resource": "Resource"
+    }
+  }
+}

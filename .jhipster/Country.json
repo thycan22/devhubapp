@@ -1,0 +1,27 @@
+{
+    "name": "Country",
+    "fields": [
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "customer",
+            "otherEntityRelationshipName": "country",
+            "relationshipName": "customer"
+        }
+    ],
+    "changelogDate": "20200123163635",
+    "entityTableName": "country",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

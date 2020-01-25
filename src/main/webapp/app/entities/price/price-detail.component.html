@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="price">
+            <h2><span jhiTranslate="devApp.price.detail.title">Price</span> {{price.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="devApp.price.price">Price</span></dt>
+                <dd>
+                    <span>{{price.price}}</span>
+                </dd>
+                <dt><span jhiTranslate="devApp.price.statusPeriod">Status Period</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'devApp.Season.' + price.statusPeriod}}">{{price.statusPeriod}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/price', price.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

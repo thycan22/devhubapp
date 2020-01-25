@@ -1,0 +1,21 @@
+{
+  "devApp": {
+    "scheduler": {
+      "home": {
+        "title": "Schedulers",
+        "createLabel": "Scheduler erstellen",
+        "createOrEditLabel": "Scheduler erstellen oder bearbeiten",
+        "notFound": "No Schedulers found"
+      },
+      "created": "Scheduler erstellt mit ID {{ param }}",
+      "updated": "Scheduler aktualisiert mit ID {{ param }}",
+      "deleted": "Scheduler gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Scheduler {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Scheduler"
+      }
+    }
+  }
+}

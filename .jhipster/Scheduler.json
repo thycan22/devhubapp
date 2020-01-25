@@ -1,0 +1,15 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [],
+    "changelogDate": "20200124111258",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "scheduler",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

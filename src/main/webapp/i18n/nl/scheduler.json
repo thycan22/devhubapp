@@ -1,0 +1,21 @@
+{
+  "devApp": {
+    "scheduler": {
+      "home": {
+        "title": "Schedulers",
+        "createLabel": "Maak een nieuwe Scheduler",
+        "createOrEditLabel": "Maak of wijzig een Scheduler",
+        "notFound": "No Schedulers found"
+      },
+      "created": "A new Scheduler is created with identifier {{ param }}",
+      "updated": "A Scheduler is updated with identifier {{ param }}",
+      "deleted": "A Scheduler is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Scheduler {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Scheduler"
+      }
+    }
+  }
+}
